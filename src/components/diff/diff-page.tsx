@@ -90,7 +90,7 @@ export function DiffPage(props: DiffPageProps) {
   const { diffRef: refParam } = props;
 
   const [viewMode, setViewMode] = useState<ViewMode>(() => (localStorage.getItem('diffity-view-mode') as ViewMode | null) ?? 'split');
-  const [hideWhitespace, storeHideWhitespace] = useViewState(`diff:${refParam}:hideWhitespace`, false);
+  const [hideWhitespace, storeHideWhitespace] = useViewState(`diff:${refParam}:hideWhitespace`, true);
   const { theme, toggleTheme } = useTheme();
   const [showIgnored, storeShowIgnored] = useViewState(`diff:${refParam}:showIgnored`, false);
   // These refetch the diff; in a transition the current one stays up instead of the page suspending to a skeleton.
